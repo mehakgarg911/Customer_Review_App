@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+   <body>
+      <h2 style = "text-align: center;">Reviews</h2>
+      
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {% for row in rows %}
+               <br>
+               Review for product "{{ row["product"] }}" by {{ row["fname"] }} : {{ row["review"] }}
+               <br>
+               {% endfor %}
+  
+            </div>
+
+            <a href = "/"><h1>Go to homepage</h1></a>
+   </body>
+</html>

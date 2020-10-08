@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+   <body>
+      <h2 style = "text-align: center;">Review Form</h2>
+      
+      {% for message in form.fname.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+      
+      {% for message in form.product.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+
+      {% for message in form.review.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+      
+      <form action = "{{ url_for('addreview') }}" method = post>
+         <fieldset>
+            <legend>Review Form</legend>
+            {{ form.hidden_tag() }}
+            
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.fname.label }}<br>
+               {{ form.fname }}
+               <br>
+               
+               {{ form.product.label }}<br>
+               {{ form.product }}
+               <br>
+               
+               {{ form.review.label }}
+               <br>
+               {{ form.review }}
+               <br>
+            
+               {{ form.submit }}
+            </div>
+            
+         </fieldset>
+      </form>
+   </body>
+</html>
